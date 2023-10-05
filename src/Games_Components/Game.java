@@ -22,6 +22,7 @@ public abstract class Game {
 
   public void setNoOfPlauyer(int num)
   {
+      setupLevels();
       if(num>1)
       {
           isMultiplayer = true;

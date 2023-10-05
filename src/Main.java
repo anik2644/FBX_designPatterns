@@ -6,7 +6,7 @@ import Games_Components.*;
 // Common abstract class for games
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 
        // GamePlayer gamePlayer= new GamePlayer();
@@ -26,11 +26,13 @@ public class Main {
         {
 
             new GamePlayer(installedGame,1).Play();
-           // new GamePlayer(installedGame,4).Play();
+            Thread.sleep(2000);
+            new GamePlayer(installedGame,4).Play();
             System.out.println("\n\n");
             System.out.println(installedGame.gameName() +" Scores: " + installedGame.score);
             System.out.println("\n\n\n\n");
         }
+
 
 
         System.out.println("\n\ncloud server test;\n");

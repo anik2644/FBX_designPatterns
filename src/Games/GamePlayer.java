@@ -10,12 +10,11 @@ public class GamePlayer {
     {
         this.game = game;
         this.NoPlayers = NoPlayers;
-
         setPlayermode(NoPlayers);
     }
 
     private void setPlayermode(int noPlayers) {
-        game.setNoOfPlauyer(NoPlayers);
+        game.setNoOfPlauyer(noPlayers);
     }
 
     public void Play()
