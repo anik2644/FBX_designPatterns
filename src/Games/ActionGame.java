@@ -37,6 +37,11 @@ public class ActionGame extends Game{
         };
     }
 
+    public String gameName()
+    {
+        return  " Action Game  ";
+    }
+
     @Override
     protected void playGame() {
         System.out.println("Playing Action Games.Game");

@@ -33,6 +33,10 @@ public class StrategyGame extends Game {
                 }
         };
     }
+    public String gameName()
+    {
+        return  " Strategy Game  ";
+    }
 
     @Override
     protected void playGame() {

@@ -1,9 +1,11 @@
 package Authentication;
+import CloudSystem.CloudDataManager;
 import Gamers.Gamer;
 
 // Singleton AuthenticationManager class for handling authentication
 public class AuthenticationManager {
 
+    CloudDataManager cloudDataManager = new CloudDataManager();
     boolean isLogin = false;
 
     Gamer credential = null;
@@ -16,6 +18,8 @@ public class AuthenticationManager {
             credential = new Gamer(username);
             isLogin = true;
             System.out.println("SignUp Done");
+
+            cloudDataManager.sendData("profile information of " + username + " and other data" );
             return true; // Signup successful
         }
         return false; // Username already exists
@@ -24,6 +28,7 @@ public class AuthenticationManager {
     // Login: Authenticate a user and create a session
     public boolean login(String username) {
         if (!isLogin) {
+            cloudDataManager.retrieveData("for "+username);
             credential = new Gamer(username);
             isLogin = true;
             System.out.println("Login Done");
@@ -35,6 +40,7 @@ public class AuthenticationManager {
     // Logout: End the user's session
     public boolean logout(String username) {
         if (isLogin) {
+            cloudDataManager.sendData("removing credential" );
             credential = null;
             isLogin = false;
             System.out.println("LogOut Done");

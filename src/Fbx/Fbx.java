@@ -53,8 +53,9 @@ public class Fbx {
 
 
 
-   public Game PrepareGame(String gameName, int noPlayers)
+   public Game PrepareGame(String gameName)
    {
+        int noPlayers = 1;
        if(Authentication.isLoggedIn())
            {
                if(gameName == "actionGame")

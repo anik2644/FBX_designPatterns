@@ -34,6 +34,10 @@ public class RacingGame extends Game{
                 }
         };
     }
+    public String gameName()
+    {
+        return  " Racing Game  ";
+    }
 
     @Override
     protected void playGame() {

@@ -1,5 +1,6 @@
 package Gamers;
 
+import CloudSystem.CloudDataManager;
 import Games_Components.Game;
 
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.List;
 
 // Gamers.GamerProfile class
 public class Gamer {
+    CloudDataManager cloudDataManager = new CloudDataManager();
     private String playerName;
     public ArrayList<Game> InstalledGames;
 
@@ -35,7 +37,14 @@ public class Gamer {
         InstalledGames.add(game);
     }
 
-
+    public void EditProfile()
+    {
+        cloudDataManager.sendData("Data are sending to edit ");
+    }
+    public void showProfile()
+    {
+        cloudDataManager.retrieveData("Data are retriving to view profile: "+ playerName);
+    }
 
 /*    @Override
     public String toString() {

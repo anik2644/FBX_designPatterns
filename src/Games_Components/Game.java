@@ -31,6 +31,7 @@ public abstract class Game {
           isMultiplayer = false;
       }
   }
+   public abstract String gameName();
     public int getScore()
     {
         if(isMultiplayer){
