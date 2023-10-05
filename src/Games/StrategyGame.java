@@ -53,4 +53,15 @@ public class StrategyGame extends Game {
 
         }
     }
+
+    @Override
+    public void CheatCodeCare() {
+        {
+
+            cheatCodeManager.addCheatCode("GODMODE", 1); // Cheat code for game with ID 1
+            cheatCodeManager.addCheatCode("UNLIMITED_AMMO", 2); // Cheat code for game with ID 2
+            cheatCodeManager.addCheatCode("INFINITE_HEALTH", 3); // Cheat code for game with ID 3
+
+        }
+    }
 }

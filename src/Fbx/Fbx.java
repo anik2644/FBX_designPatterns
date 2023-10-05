@@ -41,48 +41,27 @@ public class Fbx {
 
 
     Game actionGame_single = new ActionGame(inputHandler, uiElement, audioManager, false);
-    Game actionGame_multi = new ActionGame(inputHandler, uiElement, audioManager, true);
-
     Game racingGame_single = new RacingGame(inputHandler, uiElement, audioManager, false);
-    Game racingGame_multi = new RacingGame(inputHandler, uiElement, audioManager, true);
-
     Game strategyGame_single = new StrategyGame(inputHandler, uiElement, audioManager, false);
-    Game strategyGamemulti = new StrategyGame(inputHandler, uiElement, audioManager, true);
-
 
 
 
 
    public Game PrepareGame(String gameName)
    {
-        int noPlayers = 2;
+        ;
        if(Authentication.isLoggedIn())
            {
                if(gameName == "actionGame")
                {
-                   if(noPlayers==1){
-                       return actionGame_single;
-                   }
-                   else {
-                       return actionGame_multi;
-                   }
+                   return actionGame_single;
                }
                else if(gameName == "racingGame")
                {
-                   if(noPlayers==1){
-                       return racingGame_single;
-                   }
-                   else {
-                       return racingGame_multi;
-                   }
+                   return racingGame_single ;
                }
                else {
-                   if(noPlayers==1){
-                       return strategyGame_single;
-                   }
-                   else {
-                       return strategyGamemulti;
-                   }
+                   return strategyGame_single;
                }
            }
        else

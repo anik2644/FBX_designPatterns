@@ -19,6 +19,7 @@ public class GamePlayer {
 
     public void Play()
     {
+        System.out.println("\n\n"+game.gameName() + " is loading");
         game.run();
     }
 }

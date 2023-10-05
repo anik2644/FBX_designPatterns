@@ -1,7 +1,10 @@
 package Games_Components;
 
+import CheatCodeMAnager.CheatCodeManager;
+
 // Common abstract class for games
 public abstract class Game {
+    public CheatCodeManager cheatCodeManager= new CheatCodeManager();
     protected InputHandler inputHandler;
     protected UIElement uiElement;
     protected AudioManager audioManager;
@@ -16,6 +19,7 @@ public abstract class Game {
         this.isMultiplayer = isMultiplayer;
         this.score = new Score(); // Initialize Score object
         setupLevels();
+        this.CheatCodeCare();
     }
 
     // Common scoring system functions
@@ -65,6 +69,7 @@ public abstract class Game {
         displayUI();
         inputHandler.handleInput();
         playSoundtrack();
+        System.out.println("\n\n"+gameName() + " is Started ");
         playGame();
     }
 
@@ -77,4 +82,12 @@ public abstract class Game {
     protected void playSoundtrack() {
         audioManager.playMusic("Games.Game Soundtrack");
     }
+
+
+
+    public abstract void CheatCodeCare();
+
+
+
+
 }

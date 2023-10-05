@@ -1,5 +1,6 @@
 package Gamers;
 
+import CheatCodeMAnager.CheatCode;
 import CloudSystem.CloudDataManager;
 import Games_Components.Game;
 
@@ -44,6 +45,12 @@ public class Gamer {
     public void showProfile()
     {
         cloudDataManager.retrieveData("Data are retriving to view profile: "+ playerName);
+    }
+
+    public void tryCheatCode()
+    {
+        CheatCode mycheatcode = new CheatCode("UNLIMITED_AMMO");
+        mycheatcode.run(mycheatcode.cheatcode);
     }
 
 /*    @Override
