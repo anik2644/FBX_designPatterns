@@ -8,26 +8,16 @@ import Games_Components.*;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
+        System.out.println("This is developed by \nAbdullah - Al - Mahmud\nRoll: 44\nNafisa Anzum\nRoll:45");
+
         Fbx FBX = Fbx.getInstance();
        // GamePlayer gamePlayer= new GamePlayer();
         Gamer Anik = new Gamer("Anik");
-
-
         FBX.Authentication.login(Anik.getPlayerName());
+
 
         Anik.InstallGame( FBX.PrepareGame("actionGame"));
         Anik.InstallGame( FBX.PrepareGame("strategyGame"));//.add();
-       // Anik.InstallGame( FBX.PrepareGame("racingGame"));
-
-
-        Gamer Nafisa = new Gamer("Nafisa");
-
-
-        FBX.Authentication.signup(Nafisa.getPlayerName());
-
-        Nafisa.InstallGame( FBX.PrepareGame("racingGame"));
-
-
         for (Game installedGame : Anik.InstalledGames)
         {
 
@@ -46,8 +36,13 @@ public class Main {
             System.out.println("\n\n\n\n");
         }
 
+        FBX.Authentication.logout(Anik.getPlayerName());
 
         System.out.println("\n\n>>>>>>Nafisa is Playing>>>>>>>>>>>\n\n");
+
+        Gamer Nafisa = new Gamer("Nafisa");
+        FBX.Authentication.signup(Nafisa.getPlayerName());
+        Nafisa.InstallGame( FBX.PrepareGame("racingGame"));
         for (Game installedGame : Nafisa.InstalledGames)
         {
 
