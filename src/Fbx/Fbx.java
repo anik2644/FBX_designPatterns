@@ -11,6 +11,19 @@ import Games_Components.UIElement;
 
 public class Fbx {
 
+    private static Fbx instance;
+
+    private Fbx() {
+        // Private constructor to prevent external instantiation
+    }
+
+    public static Fbx getInstance() {
+        if (instance == null) {
+            instance = new Fbx();
+        }
+        return instance;
+    }
+
     public AuthenticationManager Authentication = new AuthenticationManager();
 
     InputHandler inputHandler = new InputHandler() {

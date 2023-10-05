@@ -8,7 +8,7 @@ import Games_Components.*;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
-        Fbx FBX = new Fbx();
+        Fbx FBX = Fbx.getInstance();
        // GamePlayer gamePlayer= new GamePlayer();
         Gamer Anik = new Gamer("Anik");
 
